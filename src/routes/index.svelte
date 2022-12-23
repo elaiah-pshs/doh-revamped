@@ -1,44 +1,65 @@
 <script>
+	import doh_logo from 'images/DOH Logo.png';
 	import successkid from 'images/successkid.jpg';
 </script>
 
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
+	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+	heading {
+		color: white;
+		font-family: "Lato", sans-serif;
+		font-weight: 300;
+
+		background: url("https://www.bworldonline.com/wp-content/uploads/2022/06/DOH.jpg") no-repeat center center;
+    	background-size: cover;
+		height: 100vh;
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
+	.background_tint {
+		background-color: rgba(0,0,0,.5);
+  		background-blend-mode: multiply;
 	}
 
 	img {
 		width: 100%;
 		max-width: 400px;
-		margin: 0 0 1em 0;
+		margin: 0 3em 0 0;
 	}
 
-	p {
-		margin: 1em auto;
+	section {
+		max-width: 50em;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+	h1 {
+		font-family: Rockwell;
+		font-size: 8em;
+		margin: 0;
+	}
+
+	h4 {
+		font-size: 3em;
+		margin: 0;
 	}
 </style>
 
 <svelte:head>
 	<title>Department of Health</title>
 </svelte:head>
+
+<heading class="background_tint">
+	<img src={doh_logo} alt="DOH logo">
+	<section>
+		<h4>Republic of the Philippines</h4>
+		<h1>Department of Health</h1>
+		<h4>Kagawaran ng Kalusugan</h4>
+	</section>
+	
+</heading>
 
 <h1>Great success!</h1>
 
