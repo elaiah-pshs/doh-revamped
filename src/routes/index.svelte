@@ -13,7 +13,7 @@
 
 		background: url("https://www.bworldonline.com/wp-content/uploads/2022/06/DOH.jpg") no-repeat center center;
     	background-size: cover;
-		height: 100vh;
+		height: calc(100vh - 4em);
 		
 		display: flex;
 		align-items: center;

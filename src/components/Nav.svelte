@@ -1,35 +1,22 @@
 <script>
 	import NavItem from './NavItem.svelte';
-	import doh_logo from 'images/DOH Logo.png';
+	import NavLogo from './NavLogo.svelte';
+	import NavThemeSwitcher from './NavThemeSwitcher.svelte';
 </script>
 
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
+<style lang="scss">
 	nav {
 		font-size: 16px;
 		font-family: "Lato", sans-serif;
 		font-weight: 200;
-		color: white;
+		color: #fff;
 
-		background-color: rgba(0,0,0,0.5);
+		background-color: #000;
 
 		width: 100%;
 
 		position: fixed;
 		z-index: 1;
-
-		--text-primary-light : rgb();
-		--text-primary-dark: rgb(236, 236, 236);
-		--text-secondary-light : rgb();
-		--text-secondary-dark: rgb(182, 182, 182);
-		--bg-primary-light: rgb();
-		--bg-primary-dark: rgb();
-		--bg-secondary-light: rgb();
-		--bg-secondary-dark: rgb();
-		--transition-speed-fast: 500ms;
-		--transition-speed-medium: 800ms;
-		--transition-speed-slow: 1000ms;
 	}
 
 	ul {
@@ -48,13 +35,14 @@
 
 <nav>
 	<ul>
-		<NavItem icon src="{doh_logo}" alt="DOH Logo; redirects to the home page" />
+		<NavLogo />
 		<NavItem link_to="about" text="About" />
 		<NavItem link_to="locations" text="Locations" />
 		<NavItem link_to="programs" text="Programs" />
 		<NavItem link_to="covid_19" text="COVID-19" />
 		<NavItem link_to="documents" text="Documents" />
-		<NavItem highlight link_to="contact" text="Contact Us!" />
+		<NavThemeSwitcher />
+		<NavItem highlighted link_to="contact" text="Contact Us!" />
 		<NavItem link_to="credits" text="Credits" />
 	</ul>
 </nav>
