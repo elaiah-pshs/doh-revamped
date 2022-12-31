@@ -5,13 +5,15 @@
 </script>
 
 <style lang="scss">
+	@use "../styles/global" as g;
+
 	nav {
 		font-size: 16px;
 		font-family: "Lato", sans-serif;
 		font-weight: 200;
-		color: #fff;
+		color: #FFF;
 
-		background-color: #000;
+		background-color: g.$surface-dark;
 
 		width: 100%;
 
@@ -30,6 +32,15 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+	}
+
+	:global(nav li) {
+		margin-right: 1em;
+	}
+
+	:global(nav a) {
+		text-decoration: none;
+		margin: 1em 0.5em;
 	}
 </style>
 

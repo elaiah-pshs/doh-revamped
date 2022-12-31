@@ -4,7 +4,7 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import url from '@rollup/plugin-url';
 import svelte from 'rollup-plugin-svelte';
-import autoPreprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
@@ -13,6 +13,15 @@ import pkg from './package.json';
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+
+const preprocess = sveltePreprocess({
+	scss: {
+	  	includePaths: ['src'],
+	},
+	postcss: {
+	  	plugins: [require('autoprefixer')],
+	},
+});
 
 const onwarn = (warning, onwarn) =>
 	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
@@ -36,7 +45,7 @@ export default {
 					dev,
 					hydratable: true
 				},
-				preprocess: autoPreprocess()
+				preprocess,
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
@@ -91,7 +100,8 @@ export default {
 					generate: 'ssr',
 					hydratable: true
 				},
-				emitCss: false
+				emitCss: false,
+				preprocess,
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),

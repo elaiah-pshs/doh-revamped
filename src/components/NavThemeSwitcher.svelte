@@ -1,35 +1,41 @@
 <script>
-    function light_mode() {
-        window.document.querySelector("main").classList.replace("dark", "light");
-    }
+    let body = window.document.body;
+    let theme_switcher;
 
-    function dark_mode() {
-        window.document.querySelector("main").class = "dark";
+    function switch_theme() {
+        // contents = window.document.querySelector("main");
+        body.classList.toggle("dark");
+        theme_switcher.classList.toggle("dark");
+        
+        if (theme_switcher.innerHTML == "light_mode") {
+            theme_switcher.innerHTML = "dark_mode";
+        } else {
+            theme_switcher.innerHTML = "light_mode";
+        }
     }
 </script>
 
 <style lang="scss">
+    @use "../styles/global" as g;
+
     li {
         margin-left: auto;
         display: flex;
 	}
 
-    button {
+    :global(nav button) {
+        @include g.lighten();
         padding: 0.25em 0.5em;
-        border: none;
+        border: 1px solid #FFF;
     }
 
-    .light {
-        color: black;
-        background-color: white;
+    :global(nav button.dark) {
+        @include g.darken();
     }
 </style>
 
 <li>
-    <button class="material-symbols-outlined light" on:click{light_mode()}>
+    <button class="material-symbols-outlined" id="theme-switcher" on:click={switch_theme} bind:this={theme_switcher}>
         light_mode
-    </button>
-    <button class="material-symbols-outlined dark" on:click{dark_mode()}>
-        dark_mode
     </button>
 </li>

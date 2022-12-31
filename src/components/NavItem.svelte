@@ -4,8 +4,13 @@
 
 <style lang="scss">
     .highlighted {
-        outline: 1px solid white;
-        outline-offset: 0.5em;
+        border: 1px solid white;
+        margin: 0;
+        padding: 0.375em 0.5em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
 

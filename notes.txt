@@ -41,3 +41,8 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
+
+Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+
+1000px - shrink navigation
+760px - shrink text

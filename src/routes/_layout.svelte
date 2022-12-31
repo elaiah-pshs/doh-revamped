@@ -1,21 +1,15 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+	import Header from '../components/Header.svelte';
 </script>
 
-<style>
-	@font-face {
-		font-family: "Rockwell";
-		font-style: "normal";
-		src: url("../static/ROCK.TTF");
-	}
-
-	main {
-		position: relative;
-		top: 4em;
-	}
+<style lang="scss" global>
+	@use "../styles/global" as g;
 </style>
 
 <Nav />
+
+<Header />
 
 <main>
 	<slot></slot>

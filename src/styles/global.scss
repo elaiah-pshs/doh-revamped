@@ -1,0 +1,9 @@
+@import "./theme.scss";
+
+body {
+    @include lighten();
+}
+
+body.dark {
+    @include darken();
+}
