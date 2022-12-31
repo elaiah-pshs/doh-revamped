@@ -2,14 +2,14 @@
 
 $primary: #EBC40D;
 $secondary: #342805;
-$background: lighten(g.$primary, 45%);
+$background: lighten($primary, 45%);
 $surface-light: #164E31;
 $surface-mid: #003E1C;
 $surface-dark: #010D07;
 $text: #000000;
 
 @mixin lighten {
-    $background: lighten(g.$primary, 45%);
+    $background: lighten($primary, 45%);
     $text: #000000;
 
     background: $background;
@@ -18,7 +18,7 @@ $text: #000000;
 
 @mixin darken {
     $background: #000000;
-    $text: lighten(g.$primary, 45%);
+    $text: lighten($primary, 45%);
 
     background: $background;
 	color: $text;
